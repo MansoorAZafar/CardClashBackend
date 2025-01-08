@@ -21,7 +21,7 @@ COPY . .
 # Build the application
 RUN dotnet build -c $BUILD_CONFIGURATION -o /app/build
 
-FROM build as publish
+FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
 RUN dotnet publish -c $BUILD_CONFIGURATION -o /app/publish
 
