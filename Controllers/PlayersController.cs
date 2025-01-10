@@ -14,9 +14,9 @@ public class PlayersController : ControllerBase
         => _context = context;
 
     // GET: api/Players/5
-    [HttpGet("{email}")]
-    public async Task<ActionResult<bool>> GetPlayer(string? email)
-        => await _context.Players.AnyAsync(x => x.email == email);
+    [HttpGet("{email}/{pass}")]
+    public async Task<ActionResult<bool>> GetPlayer(string? email, string? pass)
+        => await _context.Players.AnyAsync(x => x.email == email && x.password == pass);
 
 
     // POST: api/Players
